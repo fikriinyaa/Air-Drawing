@@ -1,33 +1,3 @@
-"""
-AIR DRAWING SYSTEM v2.0 - ULTRA RESPONSIVE
-===========================================
-Upgrade:
-  - Smoothing posisi jari (tidak goyang)
-  - Mode stabilizer (mode tidak ganti tiba-tiba)
-  - Interpolasi garis (tidak ada celah saat gerak cepat)
-  - MediaPipe confidence lebih optimal
-  - Deteksi jari lebih akurat pakai threshold dinamis
-
-Requirements:
-    pip install opencv-python mediapipe numpy
-
-Cara penggunaan:
-    python air_drawing.py
-
-Kontrol Tangan:
-    1 jari (telunjuk)          -> DRAW
-    2 jari (telunjuk + tengah) -> ERASE
-    Kepal / jari lain          -> IDLE
-
-Keyboard:
-    ESC       -> Keluar
-    C         -> Clear canvas
-    S         -> Save gambar
-    + / -     -> Tebal / tipis garis
-    [ / ]     -> Kecil / besar penghapus
-    1~5       -> Warna (Merah/Hijau/Biru/Kuning/Putih)
-"""
-
 import cv2
 import mediapipe as mp
 import numpy as np
