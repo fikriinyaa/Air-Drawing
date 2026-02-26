@@ -3,9 +3,7 @@ import mediapipe as mp
 import numpy as np
 from collections import deque
 
-# =============================================
 #  KONFIGURASI
-# =============================================
 COLORS = {
     "RED":    (0,   0,   255),
     "GREEN":  (0,   255, 0),
@@ -21,7 +19,6 @@ SMOOTH_FACTOR = 0.55
 # Stabilizer: berapa frame mode harus konsisten sebelum berganti
 MODE_STABLE_FRAMES = 4
 
-# =============================================
 #  STATE GLOBAL
 # =============================================
 current_color_idx = 4          # default WHITE
@@ -34,7 +31,6 @@ smooth_x, smooth_y = None, None
 prev_x,   prev_y   = None, None
 mode_buffer        = deque(maxlen=MODE_STABLE_FRAMES)
 
-# =============================================
 #  MEDIAPIPE
 # =============================================
 mp_hands   = mp.solutions.hands
@@ -49,7 +45,6 @@ hands = mp_hands.Hands(
     min_tracking_confidence  = 0.60,
 )
 
-# =============================================
 #  FUNGSI
 # =============================================
 def count_fingers(lm, handedness="Right"):
@@ -123,8 +118,6 @@ def draw_ui(frame, mode, color_name, line_thickness, eraser_size, fps):
     cv2.putText(frame, "ESC:Exit S:Save C:Clear | 1-5:Color +/-:Line []:Erase",
                 (8, bar_h + 18), cv2.FONT_HERSHEY_SIMPLEX, 0.38, (110, 110, 110), 1)
 
-
-# =============================================
 #  MAIN
 # =============================================
 def main():
